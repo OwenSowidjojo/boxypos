@@ -1,24 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BoxyPOS Menu</title>
-    <nav>
-
-    </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Restaurant POS</title>
+    <!-- Include the layout.html head content here -->
 </head>
 <body>
-{#Side nav bar#}
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>RestaurantPOS</h2>
+<!-- Use the layout.html structure and replace main-content with: -->
+<div class="space-y-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between">
+        <div>
+            <h2 class="text-3xl font-bold text-foreground">Dashboard</h2>
+            <p class="text-muted-foreground">Welcome back! Here's what's happening today.</p>
         </div>
-        <ul class="sidebar-nav">
-            <li><a href="/" class="nav-item active">Home</a></li>
-            <li><a href="/new-order" class="nav-item">New Order</a></li>
-            <li><a href="/history" class="nav-item">History</a></li>
-            <li><a href="/menu" class="nav-item">Menu</a></li>
-            <li><a href="/admin" class="nav-item">Admin</a></li>
-        </ul>
-    </nav>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+            New Order
+        </button>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Today's Sales -->
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-muted-foreground">Today's Sales</p>
+                    <div class="text-2xl font-bold text-success">$2,847.50</div>
+                    <p class="text-xs text-muted-foreground">+12.5% from yesterday</p>
+                </div>
+                <svg class="h-8 w-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Active Orders -->
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-muted-foreground">Active Orders</p>
+                    <div class="text-2xl font-bold text-primary">23</div>
+                    <p class="text-xs text-muted-foreground">Across 8 tables</p>
+                </div>
+                <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-muted-foreground">Menu Items</p>
+                    <div class="text-2xl font-bold text-warning">127</div>
+                    <p class="text-xs text-muted-foreground">5 categories</p>
+                </div>
+                <svg class="h-8 w-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Staff Online -->
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-muted-foreground">Staff Online</p>
+                    <div class="text-2xl font-bold text-accent-foreground">12</div>
+                    <p class="text-xs text-muted-foreground">Out of 15 total</p>
+                </div>
+                <svg class="h-8 w-8 text-accent-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Orders and Quick Actions -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Active Orders List -->
+        <div class="lg:col-span-2 rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-3">
+                <h3 class="text-2xl font-semibold leading-none tracking-tight">Active Orders</h3>
+                <p class="text-sm text-muted-foreground">Orders currently being processed</p>
+            </div>
+            <div class="p-6 pt-0">
+                <div class="space-y-4">
+                    <!-- Order Item -->
+                    <div class="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="font-semibold text-primary">T5</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Table 5</p>
+                                <p class="text-sm text-muted-foreground">Order #1247 • Started 15 min ago</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">$67.50</p>
+                            <span class="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-warning/10 text-warning">Preparing</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Item -->
+                    <div class="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="font-semibold text-primary">T2</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Table 2</p>
+                                <p class="text-sm text-muted-foreground">Order #1248 • Started 8 min ago</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">$89.25</p>
+                            <span class="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-success/10 text-success">Ready</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Item -->
+                    <div class="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="font-semibold text-primary">T8</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Table 8</p>
+                                <p class="text-sm text-muted-foreground">Order #1249 • Started 3 min ago</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">$124.75</p>
+                            <span class="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">New</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-3">
+                <h3 class="text-2xl font-semibold leading-none tracking-tight">Quick Actions</h3>
+                <p class="text-sm text-muted-foreground">Common tasks</p>
+            </div>
+            <div class="p-6 pt-0">
+                <div class="space-y-3">
+                    <button class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                        Create New Order
+                    </button>
+
+                    <button class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        View Order History
+                    </button>
+
+                    <button class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        Manage Menu
+                    </button>
+
+                    <button class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        View Analytics
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
