@@ -29,4 +29,4 @@ def add_product():
         except ValueError:
             pass
 
-    return redirect(url_for('m/.ain.menu'))
+    return redirect(url_for('main.menu'))
