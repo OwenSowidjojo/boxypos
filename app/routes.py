@@ -5,7 +5,10 @@ from print.printer import print_order  # NEW
 
 bp = Blueprint('main', __name__)
 
-@bp.route('/')
+@bp.route('/home')
+def home():
+
+@bp.route('/menu')
 def menu():
     products = Product.query.all()
     return render_template('menu.html', products=products)
