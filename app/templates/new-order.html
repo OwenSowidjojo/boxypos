@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order - Restaurant POS</title>
+    <!-- Include the layout.html head content here -->
+</head>
+<body>
+<!-- Use the layout.html structure and replace main-content with: -->
+<div class="space-y-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between">
+        <div>
+            <h2 class="text-3xl font-bold text-foreground">New Order</h2>
+            <p class="text-muted-foreground">Create a new order for table service</p>
+        </div>
+        <div class="flex gap-4">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                Save Draft
+            </button>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                Place Order
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Menu Items -->
+        <div class="lg:col-span-2 space-y-6">
+            <!-- Categories -->
+            <div class="flex gap-2 overflow-x-auto pb-2">
+                <button class="category-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">All</button>
+                <button class="category-btn bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">Starters</button>
+                <button class="category-btn bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">Main Course</button>
+                <button class="category-btn bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">Desserts</button>
+                <button class="category-btn bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">Beverages</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Menu Item -->
+                <div class="menu-item rounded-lg border bg-card text-card-foreground shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg">Grilled Salmon</h3>
+                            <p class="text-sm text-muted-foreground mb-2">Fresh Atlantic salmon with herbs</p>
+                            <p class="text-lg font-bold text-primary">$24.99</p>
+                        </div>
+                        <div class="w-16 h-16 bg-muted rounded-lg flex items-center justify-center ml-3">
+                            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <button class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        Add to Order
+                    </button>
+                </div>
+
+                <!-- Menu Item -->
+                <div class="menu-item rounded-lg border bg-card text-card-foreground shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg">Beef Tenderloin</h3>
+                            <p class="text-sm text-muted-foreground mb-2">Premium cut with seasonal vegetables</p>
+                            <p class="text-lg font-bold text-primary">$32.99</p>
+                        </div>
+                        <div class="w-16 h-16 bg-muted rounded-lg flex items-center justify-center ml-3">
+                            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <button class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        Add to Order
+                    </button>
+                </div>
+
+                <!-- Menu Item -->
+                <div class="menu-item rounded-lg border bg-card text-card-foreground shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg">Caesar Salad</h3>
+                            <p class="text-sm text-muted-foreground mb-2">Crisp romaine with parmesan and croutons</p>
+                            <p class="text-lg font-bold text-primary">$14.99</p>
+                        </div>
+                        <div class="w-16 h-16 bg-muted rounded-lg flex items-center justify-center ml-3">
+                            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <button class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        Add to Order
+                    </button>
+                </div>
+
+                <!-- Menu Item -->
+                <div class="menu-item rounded-lg border bg-card text-card-foreground shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg">Chocolate Cake</h3>
+                            <p class="text-sm text-muted-foreground mb-2">Rich chocolate layer cake with berries</p>
+                            <p class="text-lg font-bold text-primary">$8.99</p>
+                        </div>
+                        <div class="w-16 h-16 bg-muted rounded-lg flex items-center justify-center ml-3">
+                            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <button class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        Add to Order
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm h-fit">
+            <div class="flex flex-col space-y-1.5 p-6 pb-3">
+                <h3 class="text-2xl font-semibold leading-none tracking-tight">Order Summary</h3>
+                <div class="flex items-center gap-2">
+                    <label class="text-sm font-medium">Table:</label>
+                    <select class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                        <option value="">Select Table</option>
+                        <option value="1">Table 1</option>
+                        <option value="2">Table 2</option>
+                        <option value="3">Table 3</option>
+                        <option value="4">Table 4</option>
+                        <option value="5">Table 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="p-6 pt-0">
+                <!-- Empty State -->
+                <div class="text-center py-8" id="empty-order">
+                    <svg class="h-12 w-12 text-muted-foreground mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <p class="text-muted-foreground">No items in order</p>
+                    <p class="text-sm text-muted-foreground">Add items from the menu</p>
+                </div>
+
+                <!-- Order Items (Hidden by default) -->
+                <div class="space-y-3 hidden" id="order-items">
+                    <div class="flex items-center justify-between p-3 border border-border rounded-lg">
+                        <div class="flex-1">
+                            <p class="font-medium">Grilled Salmon</p>
+                            <p class="text-sm text-muted-foreground">Qty: 1</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <p class="font-semibold">$24.99</p>
+                            <button class="h-8 w-8 rounded-full hover:bg-destructive/10 flex items-center justify-center text-destructive">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Total (Hidden by default) -->
+                <div class="border-t pt-4 mt-4 hidden" id="order-total">
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Subtotal</span>
+                            <span>$24.99</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Tax (8.5%)</span>
+                            <span>$2.12</span>
+                        </div>
+                        <div class="border-t pt-2">
+                            <div class="flex justify-between font-semibold text-lg">
+                                <span>Total</span>
+                                <span>$27.11</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Category button functionality
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            document.querySelectorAll('.category-btn').forEach(b => {
+                b.classList.remove('bg-primary', 'text-primary-foreground');
+                b.classList.add('bg-secondary', 'text-secondary-foreground', 'hover:bg-secondary/80');
+            });
+
+            // Add active class to clicked button
+            btn.classList.remove('bg-secondary', 'text-secondary-foreground', 'hover:bg-secondary/80');
+            btn.classList.add('bg-primary', 'text-primary-foreground');
+        });
+    });
+
+    // Add to order functionality (demo)
+    document.querySelectorAll('.menu-item button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Hide empty state and show order items
+            document.getElementById('empty-order').classList.add('hidden');
+            document.getElementById('order-items').classList.remove('hidden');
+            document.getElementById('order-total').classList.remove('hidden');
+
+            // Here you would add the actual item to the order
+            console.log('Added item to order');
+        });
+    });
+</script>
+</body>
+</html>

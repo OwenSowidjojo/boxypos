@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Restaurant POS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{#    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>#}
+</head>
+<body>
+<div class="space-y-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between page-header">
+        <div>
+            <h2 class="page-title">Admin Dashboard</h2>
+            <p class="page-description">Sales analytics and restaurant insights</p>
+        </div>
+        <div class="flex gap-4">
+            <select class="form-select w-180">
+                <option value="7">Last 7 days</option>
+                <option value="30">Last 30 days</option>
+            </select>
+            <button class="btn btn-outline">Export Report</button>
+        </div>
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-muted-foreground">Total Revenue</p>
+                    <div class="text-2xl font-bold text-success">$89,247</div>
+                    <p class="text-xs text-success">+18.5% from last month</p>
+                </div>
+                <svg class="h-8 w-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Revenue Chart -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Revenue Trend</h3>
+                <p class="card-description">Daily revenue over the last 30 days</p>
+            </div>
+            <div class="card-content">
+                <canvas id="revenueChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

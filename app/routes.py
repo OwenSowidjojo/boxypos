@@ -7,14 +7,17 @@ from print.printer import print_order  # NEW
 
 bp = Blueprint('main', __name__)
 
+
 @bp.route('/')
 def home():
     return render_template('home.html')
+
 
 @bp.route('/menu')
 def menu():
     products = Product.query.all()
     return render_template('menu.html', products=products)
+
 
 @bp.route('/add', methods=['POST'])
 def add_product():
@@ -25,7 +28,7 @@ def add_product():
     if name and price:
         try:
             price = float(price)
-            product = Product(name=name, category= category, price =price)
+            product = Product(name=name, category=category, price=price)
             db.session.add(product)
             db.session.commit()
 
@@ -34,3 +37,8 @@ def add_product():
             pass
 
     return redirect(url_for('main.menu'))
+
+
+@bp.route('/new-order')
+def new_order():
+    return render_template('new-order.html')
