@@ -12,7 +12,6 @@ bp = Blueprint('main', __name__)
 def home():
     return render_template('home.html')
 
-
 @bp.route('/menu')
 def menu():
     products = Product.query.all()
@@ -42,3 +41,15 @@ def add_product():
 @bp.route('/new-order')
 def new_order():
     return render_template('new-order.html')
+
+@bp.route("/history")
+def history():
+    return render_template('history.html')
+
+@bp.route("/admin")
+def admin():
+    return render_template('admin.html')
+
+# @bp.route("/new-order")
+# def new_order():
+#     return render_template('new-order.html')
