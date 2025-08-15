@@ -123,17 +123,23 @@
         <div class="rounded-lg border bg-card text-card-foreground shadow-sm h-fit">
             <div class="flex flex-col space-y-1.5 p-6 pb-3">
                 <h3 class="text-2xl font-semibold leading-none tracking-tight">Order Summary</h3>
-                <div class="flex items-center gap-2">
-                    <label class="text-sm font-medium">Table:</label>
-                    <select class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                        <option value="">Select Table</option>
-                        <option value="1">Table 1</option>
-                        <option value="2">Table 2</option>
-                        <option value="3">Table 3</option>
-                        <option value="4">Table 4</option>
-                        <option value="5">Table 5</option>
-                    </select>
-                </div>
+                <form method="POST">
+                    <label for="table_number">Table Number:</label>
+                    <input type="text" name="table_number" required><br><br>
+
+                    <h3>Products:</h3>
+                    {% for product in products %}
+                        <div>
+                            <input type="checkbox" name="product_id" value="{{ product.id }}">
+                            {{ product.name }} (€{{ product.price }})
+                            Quantity:
+                            <input type="number" name="quantity" min="1" value="1">
+                        </div>
+                    {% endfor %}
+
+                    <br>
+                    <button type="submit">Submit Order</button>
+                </form>
             </div>
             <div class="p-6 pt-0">
                 <!-- Empty State -->
@@ -186,6 +192,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     // Category button functionality
