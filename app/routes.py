@@ -1,16 +1,32 @@
-from unicodedata import category
+from datetime import date
 
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Product
+from sqlalchemy import func
+
+from .models import Product, Order
 from . import db
-from print.printer import print_order  # NEW
+from print.printer import print_order
 
 bp = Blueprint('main', __name__)
 
 
 @bp.route('/')
 def home():
-    return render_template('home.html')
+    # Get today's date
+    today = date.today()
+
+    # Get all orders from today
+    today_orders = Order.query.filter(func.date(Order.timestamp) == today).all()
+
+    # Calculate total revenue for today
+    total_revenue = sum(order.total for order in today_orders)
+
+    # Count total order
+    total_orders = len(today_orders)
+
+    return render_template('home.html',
+                           total_revenue=total_revenue,
+                           total_orders=total_orders)
 
 @bp.route('/menu')
 def menu():

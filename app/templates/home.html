@@ -32,9 +32,10 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div class="card p-6">
             <div class="flex items-center justify-between">
+                {#Revenue Today#}
                 <div>
                     <p class="text-sm font-medium text-muted-foreground">Today's Sales</p>
-                    <div class="text-2xl font-bold text-success">$2,847</div>
+                    <div class="text-2xl font-bold text-success">$ {{ total_revenue }}</div>
                     <p class="text-xs text-success">+18.2% from yesterday</p>
                 </div>
                 <svg class="h-8 w-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,9 +46,10 @@
 
         <div class="card p-6">
             <div class="flex items-center justify-between">
+                {#Orders Today#}
                 <div>
                     <p class="text-sm font-medium text-muted-foreground">Orders Today</p>
-                    <div class="text-2xl font-bold">87</div>
+                    <div class="text-2xl font-bold">{{ total_orders }}</div>
                     <p class="text-xs text-success">+12.1% from yesterday</p>
                 </div>
                 <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
